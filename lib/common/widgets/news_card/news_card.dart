@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:inshort_clone/%20application_localizations.dart';
 import 'package:inshort_clone/controller/provider.dart';
-import 'package:inshort_clone/controller/theme.dart';
+import 'package:inshort_clone/controller/settings.dart';
 import 'package:inshort_clone/global/global.dart';
 import 'package:inshort_clone/model/news_model.dart';
 import 'package:inshort_clone/routes/routes.gr.dart';
@@ -153,19 +154,22 @@ class NewsCard extends StatelessWidget {
                                   SizedBox(
                                     height: 8,
                                   ),
-                                  Text(
-                                    article.description != null
-                                        ? article.description
-                                        : "",
-                                    style: AppTextStyle.newsSubtitle,
-                                    overflow: TextOverflow.fade,
-                                    maxLines: 9,
+                                  Expanded(
+                                    child: Text(
+                                      article.description != null
+                                          ? article.description
+                                          : "",
+                                      style: AppTextStyle.newsSubtitle,
+                                      overflow: TextOverflow.fade,
+                                      maxLines: 9,
+                                      softWrap: true,
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 16,
                                   ),
                                   Text(
-                                    "swipe left for more at the ${article.sourceName} / ${DateFormat("MMMM d").format(
+                                    "${AppLocalizations.of(context).translate('swipe_message')} ${article.sourceName} / ${DateFormat("MMMM d").format(
                                       DateTime.parse(article.publishedAt),
                                     )}",
                                     style: AppTextStyle.newsFooter,
@@ -205,7 +209,7 @@ class NewsCard extends StatelessWidget {
                                       children: <Widget>[
                                         Row(
                                           children: <Widget>[
-                                            Consumer<ThemeProvider>(
+                                            Consumer<SettingsProvider>(
                                               builder:
                                                   (context, theme, child) =>
                                                       FaIcon(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inshort_clone/%20application_localizations.dart';
 import 'package:inshort_clone/global/global.dart';
 import 'package:inshort_clone/style/text_style.dart';
 
@@ -36,7 +37,7 @@ class LoadingShorts extends StatelessWidget {
                     height: 8,
                   ),
                   Text(
-                    "Loading Shorts...",
+                    AppLocalizations.of(context).translate('loading_message'),
                     style: AppTextStyle.loading,
                   ),
                 ],

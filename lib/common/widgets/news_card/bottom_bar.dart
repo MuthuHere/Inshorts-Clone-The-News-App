@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:inshort_clone/%20application_localizations.dart';
 import 'package:inshort_clone/model/news_model.dart';
 import 'package:inshort_clone/style/colors.dart';
 import 'package:inshort_clone/style/text_style.dart';
@@ -68,7 +69,7 @@ class BottomBar extends StatelessWidget {
                     height: 4,
                   ),
                   Text(
-                    "Tap to read more",
+                    AppLocalizations.of(context).translate('tap_message'),
                     style: AppTextStyle.newsBottomSubtitle,
                     overflow: TextOverflow.fade,
                   ),

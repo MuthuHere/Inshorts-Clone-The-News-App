@@ -1,6 +1,7 @@
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:inshort_clone/%20application_localizations.dart';
 import 'package:inshort_clone/bloc/serach_feed/search_feed_bloc.dart';
 import 'package:inshort_clone/bloc/serach_feed/search_feed_event.dart';
 import 'package:inshort_clone/bloc/serach_feed/search_feed_state.dart';
@@ -23,7 +24,8 @@ class SearchScreen extends StatelessWidget {
             textInputAction: TextInputAction.search,
             style: AppTextStyle.searchbar,
             decoration: InputDecoration(
-              hintText: "Search for news",
+              hintText:
+                  AppLocalizations.of(context).translate('search_message'),
               border: InputBorder.none,
               suffixIcon: IconButton(
                 icon: Icon(

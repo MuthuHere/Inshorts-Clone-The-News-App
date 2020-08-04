@@ -14,7 +14,7 @@ class GetDio {
           options.receiveTimeout = 90000;
           options.sendTimeout = 90000;
           options.followRedirects = true;
-          options.baseUrl = "http://newsapi.org/v2/";
+          options.baseUrl = "https://enigmatic-shore-16916.herokuapp.com/";
           options.headers["X-Api-Key"] = "${Global.apikey}";
 
           return options;

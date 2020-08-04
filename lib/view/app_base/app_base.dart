@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:inshort_clone/%20application_localizations.dart';
 import 'package:inshort_clone/bloc/feed/news_feed_bloc.dart';
 import 'package:inshort_clone/bloc/feed/news_feed_event.dart';
 import 'package:inshort_clone/bloc/feed/news_feed_state.dart';
@@ -99,7 +100,7 @@ class BuildNewsScreen extends StatelessWidget {
           if (state.news.length == 0) {
             return Center(
               child: Text(
-                "Nothing Found ! \n",
+                "${AppLocalizations.of(context).translate('not_found')}\n",
                 style: AppTextStyle.newsTitle,
               ),
             );

@@ -23,7 +23,7 @@ class NewsFeedRepositoryImpl implements NewsFeedRepository {
 
   @override
   Future<List<Articles>> getNewsByTopic(String topic) async {
-    final String url = "everything?q=$topic";
+    final String url = "articles/category/$topic";
     final provider = Provider.of<FeedProvider>(context, listen: false);
 
     provider.setDataLoaded(false);
@@ -31,8 +31,15 @@ class NewsFeedRepositoryImpl implements NewsFeedRepository {
     print("getNewsByTopic" + " " + topic);
 
     Response response = await GetDio.getDio().get(url);
+    print(response.statusCode);
+
     if (response.statusCode == 200) {
-      List<Articles> articles = NewsModel.fromJson(response.data).articles;
+      List<Articles> articles = [];
+
+      var decodedData = response.data as List;
+      decodedData.forEach((element) {
+        articles.add(Articles.fromJson(element));
+      });
 
       provider.setDataLoaded(true);
       addArticlesToUnreads(articles);
@@ -46,7 +53,8 @@ class NewsFeedRepositoryImpl implements NewsFeedRepository {
 
   @override
   Future<List<Articles>> getNewsByCategory(String category) async {
-    final String url = "top-headlines?country=in&category=$category";
+    final String url =
+        category != "general" ? "articles/category/$category" : "articles/all";
     final provider = Provider.of<FeedProvider>(context, listen: false);
 
     provider.setDataLoaded(false);
@@ -54,7 +62,13 @@ class NewsFeedRepositoryImpl implements NewsFeedRepository {
 
     Response response = await GetDio.getDio().get(url);
     if (response.statusCode == 200) {
-      List<Articles> articles = NewsModel.fromJson(response.data).articles;
+      List<Articles> articles = [];
+
+      var decodedData = response.data as List;
+      print(response.data);
+      decodedData.forEach((element) {
+        articles.add(Articles.fromJson(element));
+      });
 
       provider.setDataLoaded(true);
       addArticlesToUnreads(articles);

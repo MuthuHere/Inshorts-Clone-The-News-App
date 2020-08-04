@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:inshort_clone/bloc/feed/news_feed_bloc.dart';
 import 'package:inshort_clone/bloc/serach_feed/search_feed_bloc.dart';
-import 'package:inshort_clone/controller/theme.dart';
+import 'package:inshort_clone/controller/settings.dart';
 import 'package:inshort_clone/routes/routes.gr.dart';
 import 'package:inshort_clone/services/news/news_service.dart';
 import 'package:inshort_clone/style/theme.dart';
+import '../ application_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class App extends StatelessWidget {
   @override
@@ -24,19 +26,42 @@ class App extends StatelessWidget {
               SearchFeedBloc(repository: NewsFeedRepositoryImpl(context)),
         ),
       ],
-      //
-
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "Inshorts Clone",
+        title: "Karnataka Vimarshe",
         theme: kLightThemeData,
         darkTheme: kDarkThemeData,
         themeMode:
-            Provider.of<ThemeProvider>(context, listen: true).isDarkThemeOn
+            Provider.of<SettingsProvider>(context, listen: true).isDarkThemeOn
                 ? ThemeMode.dark
                 : ThemeMode.light,
         onGenerateRoute: Router.onGenerateRoute,
         navigatorKey: Router.navigatorKey,
+        supportedLocales: [
+          Locale('en', 'US'),
+          Locale('kn', 'IN'),
+        ],
+        localizationsDelegates: [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        localeResolutionCallback: (locale, supportedLocales) {
+          // Check if the current device locale is supported
+          for (var supportedLocale in supportedLocales) {
+            if (supportedLocale.languageCode == locale.languageCode &&
+                supportedLocale.countryCode == locale.countryCode) {
+              return supportedLocale;
+            }
+          }
+
+          return supportedLocales.first;
+        },
+        locale: Provider.of<SettingsProvider>(context, listen: true)
+                    .activeLanguge ==
+                "English"
+            ? Locale('en', 'US')
+            : Locale('kn', 'IN'),
       ),
     );
 
