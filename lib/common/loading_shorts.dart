@@ -30,8 +30,8 @@ class LoadingShorts extends StatelessWidget {
                   Image.asset(
                     "assets/icons/loading.png",
                     fit: BoxFit.contain,
-                    width: double.maxFinite,
-                    height: Global.height(context) * 0.5,
+                    width: 112,
+                    height: 112,
                   ),
                   SizedBox(
                     height: 8,

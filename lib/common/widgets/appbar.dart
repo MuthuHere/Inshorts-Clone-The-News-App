@@ -151,11 +151,18 @@ class CustomAppBar extends StatelessWidget {
 
     switch (provider.getLastGetRequest.elementAt(0)) {
       case "getNewsByTopic":
-        BlocProvider.of<NewsFeedBloc>(context)
-          ..add(
-            FetchNewsByTopicEvent(
-                topic: provider.getLastGetRequest.elementAt(1)),
-          );
+        if (provider.getLastGetRequest.elementAt(1) == "general") {
+          BlocProvider.of<NewsFeedBloc>(context)
+            ..add(
+              FetchNewsByCategoryEvent(category: "general"),
+            );
+        } else {
+          BlocProvider.of<NewsFeedBloc>(context)
+            ..add(
+              FetchNewsByTopicEvent(
+                  topic: provider.getLastGetRequest.elementAt(1)),
+            );
+        }
         break;
       case "getNewsByCategory":
         BlocProvider.of<NewsFeedBloc>(context)

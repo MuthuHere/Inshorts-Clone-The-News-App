@@ -5,6 +5,7 @@ import 'package:inshort_clone/%20application_localizations.dart';
 import 'package:inshort_clone/bloc/serach_feed/search_feed_bloc.dart';
 import 'package:inshort_clone/bloc/serach_feed/search_feed_event.dart';
 import 'package:inshort_clone/bloc/serach_feed/search_feed_state.dart';
+import 'package:inshort_clone/style/colors.dart';
 import 'package:inshort_clone/style/text_style.dart';
 import 'package:inshort_clone/view/search_screen/widget/search_news_card.dart';
 
@@ -30,6 +31,7 @@ class SearchScreen extends StatelessWidget {
               suffixIcon: IconButton(
                 icon: Icon(
                   FeatherIcons.x,
+                  color: AppColor.accent,
                 ),
                 onPressed: () => _searchController.clear(),
               ),

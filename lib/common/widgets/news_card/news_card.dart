@@ -2,12 +2,10 @@ import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:inshort_clone/%20application_localizations.dart';
 import 'package:inshort_clone/controller/provider.dart';
-import 'package:inshort_clone/controller/settings.dart';
 import 'package:inshort_clone/global/global.dart';
 import 'package:inshort_clone/model/news_model.dart';
 import 'package:inshort_clone/routes/routes.gr.dart';
@@ -195,51 +193,52 @@ class NewsCard extends StatelessWidget {
                                   articles: article,
                                 ))
                             : Container(),
-                        value.getWatermarkVisible
-                            ? FractionallySizedBox(
-                                alignment: Alignment.bottomCenter,
-                                heightFactor: 0.17,
-                                child: Material(
-                                  elevation: 0,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Row(
-                                          children: <Widget>[
-                                            Consumer<SettingsProvider>(
-                                              builder:
-                                                  (context, theme, child) =>
-                                                      FaIcon(
-                                                FontAwesomeIcons.github,
-                                                size: 20,
-                                                color: theme.isDarkThemeOn
-                                                    ? Colors.white
-                                                    : Colors.black,
-                                              ),
-                                            ),
-                                            SizedBox(width: 8),
-                                            Text("github/imSanjaySoni"),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            Image.asset(
-                                              "assets/icons/logo.png",
-                                              height: 20,
-                                              width: 20,
-                                            ),
-                                            SizedBox(width: 8),
-                                            Text("Inshorts Clone"),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ))
-                            : Container(),
+
+                        // value.getWatermarkVisible
+                        //     ? FractionallySizedBox(
+                        //         alignment: Alignment.bottomCenter,
+                        //         heightFactor: 0.17,
+                        //         child: Material(
+                        //           elevation: 0,
+                        //           child: Padding(
+                        //             padding: const EdgeInsets.all(8.0),
+                        //             child: Row(
+                        //               mainAxisAlignment:
+                        //                   MainAxisAlignment.spaceBetween,
+                        //               children: <Widget>[
+                        //                 Row(
+                        //                   children: <Widget>[
+                        //                     Consumer<SettingsProvider>(
+                        //                       builder:
+                        //                           (context, theme, child) =>
+                        //                               FaIcon(
+                        //                         FontAwesomeIcons.github,
+                        //                         size: 20,
+                        //                         color: theme.isDarkThemeOn
+                        //                             ? Colors.white
+                        //                             : Colors.black,
+                        //                       ),
+                        //                     ),
+                        //                     SizedBox(width: 8),
+                        //                     Text("github/imSanjaySoni"),
+                        //                   ],
+                        //                 ),
+                        //                 Row(
+                        //                   children: [
+                        //                     Image.asset(
+                        //                       "assets/icons/logo.png",
+                        //                       height: 20,
+                        //                       width: 20,
+                        //                     ),
+                        //                     SizedBox(width: 8),
+                        //                     Text("Inshorts Clone"),
+                        //                   ],
+                        //                 ),
+                        //               ],
+                        //             ),
+                        //           ),
+                        //         ))
+                        //     : Container(),
                       ],
                     ),
                   ),

@@ -5,7 +5,7 @@ class AppColor {
 
   static Color primary = Color(0xff002752);
   static Color primaryVariant = Color(0xff003A86);
-  static Color accent = Color(0xff0079FD);
+  static Color accent = Color(0xfffa6400);
   static Color surface = Color(0xffF0f0f0);
   static Color surfaceDark = Color(0xffBEC8D2);
   static Color background = Color(0xffffffff);
@@ -18,4 +18,5 @@ class AppColor {
   static Color grey = Color(0xffcccccc);
   static Color grey2 = Color(0xff555555);
   static Color grey3 = Color(0xff777777);
+  static Color topicCardBg = Color(0xffffd400);
 }

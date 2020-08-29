@@ -6,7 +6,7 @@ class AppTextStyle {
   AppTextStyle._();
 
   static final TextStyle appBarTitle = TextStyle(
-    // color: AppColor.onBackground,
+    color: AppColor.accent,
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
@@ -46,7 +46,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
   );
   static final TextStyle topiccardTitle = TextStyle(
-    // color: AppColor.onBackground,
+    color: AppColor.onBackground,
     fontSize: 14,
     fontWeight: FontWeight.w600,
   );

@@ -25,18 +25,20 @@ class TopicCard extends StatelessWidget {
           border: Border.all(
             color: AppColor.accent,
           ),
-
-          // color: Colors.white,
+          color: AppColor.topicCardBg,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Stack(
           fit: StackFit.expand,
           children: <Widget>[
-            Align(
-              alignment: Alignment.center,
-              child: Image.asset(
-                "assets/icons/$icon.png",
-                fit: BoxFit.contain,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  "assets/icons/$icon.png",
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             Align(

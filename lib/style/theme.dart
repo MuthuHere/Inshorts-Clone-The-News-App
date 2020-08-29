@@ -14,7 +14,7 @@ final ThemeData kDarkThemeData = ThemeData(
     color: Color(0xff333333),
     brightness: Brightness.dark,
     iconTheme: IconThemeData(
-      color: AppColor.accent,
+      color: Color(0xfffa6400),
     ),
   ),
   iconTheme: IconThemeData(

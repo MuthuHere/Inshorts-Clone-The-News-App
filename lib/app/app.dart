@@ -28,7 +28,7 @@ class App extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "Karnataka Vimarshe",
+        title: "Peek News",
         theme: kLightThemeData,
         darkTheme: kDarkThemeData,
         themeMode:
