@@ -32,7 +32,7 @@ class NewsCard extends StatelessWidget {
 
     print(article.url);
 
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         provider.setAppBarVisible(!provider.getAppBarVisible);
         provider.setSearchAppBarVisible(!provider.getSearchAppBarVisible);
@@ -193,52 +193,30 @@ class NewsCard extends StatelessWidget {
                                   articles: article,
                                 ))
                             : Container(),
-
-                        // value.getWatermarkVisible
-                        //     ? FractionallySizedBox(
-                        //         alignment: Alignment.bottomCenter,
-                        //         heightFactor: 0.17,
-                        //         child: Material(
-                        //           elevation: 0,
-                        //           child: Padding(
-                        //             padding: const EdgeInsets.all(8.0),
-                        //             child: Row(
-                        //               mainAxisAlignment:
-                        //                   MainAxisAlignment.spaceBetween,
-                        //               children: <Widget>[
-                        //                 Row(
-                        //                   children: <Widget>[
-                        //                     Consumer<SettingsProvider>(
-                        //                       builder:
-                        //                           (context, theme, child) =>
-                        //                               FaIcon(
-                        //                         FontAwesomeIcons.github,
-                        //                         size: 20,
-                        //                         color: theme.isDarkThemeOn
-                        //                             ? Colors.white
-                        //                             : Colors.black,
-                        //                       ),
-                        //                     ),
-                        //                     SizedBox(width: 8),
-                        //                     Text("github/imSanjaySoni"),
-                        //                   ],
-                        //                 ),
-                        //                 Row(
-                        //                   children: [
-                        //                     Image.asset(
-                        //                       "assets/icons/logo.png",
-                        //                       height: 20,
-                        //                       width: 20,
-                        //                     ),
-                        //                     SizedBox(width: 8),
-                        //                     Text("Inshorts Clone"),
-                        //                   ],
-                        //                 ),
-                        //               ],
-                        //             ),
-                        //           ),
-                        //         ))
-                        //     : Container(),
+                        value.getWatermarkVisible
+                            ? FractionallySizedBox(
+                                alignment: Alignment.bottomCenter,
+                                heightFactor: 0.17,
+                                child: Material(
+                                  elevation: 0,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          "assets/icons/new.png",
+                                          height: 20,
+                                          width: 20,
+                                        ),
+                                        SizedBox(width: 8),
+                                        Text("Peek NEWS"),
+                                      ],
+                                    ),
+                                  ),
+                                ))
+                            : Container(),
                       ],
                     ),
                   ),

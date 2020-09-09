@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "975985550883",
+    "firebase_url": "https://peeknews-6cec1.firebaseio.com",
+    "project_id": "peeknews-6cec1",
+    "storage_bucket": "peeknews-6cec1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975985550883:android:2bd6df59e854f786f0b396",
+        "android_client_info": {
+          "package_name": "peek.news.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975985550883-ucri3l00liodvj7mjn8q18cr2ib1duec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "peek.news.app",
+            "certificate_hash": "32a3df9bb023407bfb30dac414fceb4a6d3cbb72"
+          }
+        },
+        {
+          "client_id": "975985550883-djdspce9bgcnft6cfb6suhkv4b3sc3ih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAucBem_5tOx9nFbs7KTxdwQZuyd6_Y5R4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975985550883-djdspce9bgcnft6cfb6suhkv4b3sc3ih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

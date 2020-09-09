@@ -54,7 +54,7 @@ class NewsFeedRepositoryImpl implements NewsFeedRepository {
   @override
   Future<List<Articles>> getNewsByCategory(String category) async {
     final String url =
-        category != "general" ? "articles/category/$category" : "articles/all";
+        category != "general" ? "articles/?q=$category" : "articles/";
     final provider = Provider.of<FeedProvider>(context, listen: false);
 
     provider.setDataLoaded(false);
@@ -86,13 +86,18 @@ class NewsFeedRepositoryImpl implements NewsFeedRepository {
 
     provider.setDataLoaded(false);
 
-    final String url = "everything?q=$query";
+    final String url = "articles/search?q=$query";
 
     Response response = await GetDio.getDio().get(url);
     if (response.statusCode == 200) {
-      List<Articles> articles = NewsModel.fromJson(response.data).articles;
+      List<Articles> articles = [];
 
-      addArticlesToUnreads(articles);
+      var decodedData = response.data as List;
+      print(response.data);
+      decodedData.forEach((element) {
+        articles.add(Articles.fromJson(element));
+      });
+
       provider.setDataLoaded(true);
       return articles;
     } else {

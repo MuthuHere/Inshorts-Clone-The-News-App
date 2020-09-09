@@ -7,7 +7,7 @@ class FeedProvider extends ChangeNotifier {
   int _activeCategory = 1;
   bool _hasDataLoaded = false;
   bool _searchAppBarVisible = true;
-  bool _appBarVisible = false;
+  bool _appBarVisible = true;
   bool _watermarkVisible = false;
   bool _feedBottomActionbarVisible = false;
   int _curentArticalIndex = 0;

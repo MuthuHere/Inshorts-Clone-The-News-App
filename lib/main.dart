@@ -7,6 +7,7 @@ import 'package:inshort_clone/model/news_model.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'app/app.dart';
+import 'utils/firebase_notification.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +25,8 @@ void main() async {
 
   final _lang = await Hive.box('settingsBox').get('activeLang');
   SettingsProvider().setLang(_lang ?? 'English');
+
+  PushNotificationsManager.init();
 
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(

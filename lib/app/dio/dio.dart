@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:inshort_clone/global/global.dart';
 
 class GetDio {
   bool loggedIn;
@@ -15,8 +14,6 @@ class GetDio {
           options.sendTimeout = 90000;
           options.followRedirects = true;
           options.baseUrl = "https://enigmatic-shore-16916.herokuapp.com/";
-          options.headers["X-Api-Key"] = "${Global.apikey}";
-
           return options;
         },
         onResponse: (Response response) async {

@@ -16,7 +16,8 @@ void convertWidgetToImageAndShare(BuildContext context, containerKey) async {
   Uint8List uInt8List = byteData.buffer.asUint8List();
   try {
     await Share.file('Peeknews', 'Peeknews.png', uInt8List, 'image/png',
-        text: 'Read more at Peek News App');
+        text:
+            'Peek NEWS brings you exclusive Insider\'s stories in crisp summary\n\n*read more at*\thttps://play.google.com/store/apps/details?id=peek.news.app');
   } catch (e) {
     print('error: $e');
   }

@@ -23,7 +23,7 @@ class CategoryCard extends StatelessWidget {
       },
       child: Container(
         margin: const EdgeInsets.all(8),
-        height: Global.height(context) * 0.14,
+        height: Global.height(context) * 0.12,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
@@ -31,8 +31,8 @@ class CategoryCard extends StatelessWidget {
               opacity: active ? 1 : 0.5,
               child: Image.asset(
                 "assets/icons/$icon.png",
-                height: 70,
-                width: 70,
+                height: 50,
+                width: 50,
                 fit: BoxFit.contain,
               ),
             ),
